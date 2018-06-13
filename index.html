@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        body {
+            background-color: #2F2F2F;
+        }
+        .box {
+            max-width:900px;
+            margin:80px auto;
+        }
+        .box img {
+            width: 180px;
+            height: 180px;
+        }
+        li {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            list-style:none;
+            margin: 10px;
+            display: inline-block;
+            perspective: 300px;
+        }
+        .bar,.front,.left,.right {
+            color:#fff;
+            background-color:#000;
+            text-align:center;
+            line-height:180px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            /* 3D空间内移动一个元素的位置 */
+        }
+        .bar {
+            transform: rotateX(90deg) translate3d(0,-90px,90px);
+        }
+        .left {
+            transform: rotateY(-90deg) translate3d(-90px,0,90px);
+        }
+        .right {
+            transform: rotateY(90deg) translate3d(90px,0,90px);
+        }
+        .front {
+            transform: rotateX(-90deg) translate3d(0,90px,90px);
+        }
+        .b {
+            transform-style: preserve-3d;
+            transform-origin: 50% 50% -90px;
+            /*transform: rotateX(30deg) rotateY(30deg);*/
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            /*animation: 20s ease-out 0ms 1 normal forwards;*/
+            transition: 1s all;
+        }
+        .imgBox {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            transition: none;
+            transform: translate3d(0,0,0)
+        }
+        .imgBox,.bar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic1.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture1</div>
+                <div class="front">Picture1</div>
+                <div class="left">Picture1</div>
+                <div class="right">Picture1</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic2.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture2</div>
+                <div class="front">Picture2</div>
+                <div class="left">Picture2</div>
+                <div class="right">Picture2</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic3.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture3</div>
+                <div class="front">Picture3</div>
+                <div class="left">Picture3</div>
+                <div class="right">Picture3</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic4.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture4</div>
+                <div class="front">Picture4</div>
+                <div class="left">Picture4</div>
+                <div class="right">Picture4</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic2-1.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture5</div>
+                <div class="front">Picture5</div>
+                <div class="left">Picture5</div>
+                <div class="right">Picture5</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic2-2.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture6</div>
+                <div class="front">Picture6</div>
+                <div class="left">Picture6</div>
+                <div class="right">Picture6</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic2-3.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture7</div>
+                <div class="front">Picture7</div>
+                <div class="left">Picture7</div>
+                <div class="right">Picture7</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic2-4.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture8</div>
+                <div class="front">Picture8</div>
+                <div class="left">Picture8</div>
+                <div class="right">Picture8</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic3-1.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture9</div>
+                <div class="front">Picture9</div>
+                <div class="left">Picture9</div>
+                <div class="right">Picture9</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic3-2.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture10</div>
+                <div class="front">Picture10</div>
+                <div class="left">Picture10</div>
+                <div class="right">Picture10</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic3-3.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture11</div>
+                <div class="front">Picture11</div>
+                <div class="left">Picture11</div>
+                <div class="right">Picture11</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic3-4.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture12</div>
+                <div class="front">Picture12</div>
+                <div class="left">Picture12</div>
+                <div class="right">Picture12</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic4-1.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture13</div>
+                <div class="front">Picture13</div>
+                <div class="left">Picture13</div>
+                <div class="right">Picture13</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic4-2.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture14</div>
+                <div class="front">Picture14</div>
+                <div class="left">Picture14</div>
+                <div class="right">Picture14</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic4-3.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture15</div>
+                <div class="front">Picture15</div>
+                <div class="left">Picture15</div>
+                <div class="right">Picture15</div>
+            </div>
+        </li>
+        <li>
+            <div class="b">
+                <div class="imgBox">
+                    <div class="show">
+                        <img src="img/pic4-4.png" alt="">
+                    </div>
+                </div>
+                <div class="bar">Picture16</div>
+                <div class="front">Picture16</div>
+                <div class="left">Picture16</div>
+                <div class="right">Picture16</div>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $('li').hover(function(e){
+        var w = $(this).width();
+        var h = $(this).height();
+        var x = (e.pageX - this.offsetLeft -(w/2)) * (w > h ? (h / w): 1);
+        // 获取x值
+        var y = (e.pageY - this.offsetTop -(h/2)) * (h > w ? (w / h): 1);
+        // 获取y值
+        var direction = Math.round((( Math.atan2(y,x)*(180/Math.PI ) +180)/90)+3) % 4;
+        if(direction === 0){
+            $(this).find('.b').css('transform','rotateX(-90deg)');
+        }else if(direction === 1){
+            $(this).find('.b').css('transform','rotateY(-90deg)');
+        }else if(direction === 2){
+            $(this).find('.b').css('transform','rotateX(90deg)');
+        }else if(direction === 3){
+            $(this).find('.b').css('transform','rotateY(90deg)');
+        }
+    },function(e){
+        var w = $(this).width();
+        var h = $(this).height();
+        var x = (e.pageX - this.offsetLeft -(w/2)) * (w > h ? (h / w): 1);
+        // 获取x值
+        var y = (e.pageY - this.offsetTop -(h/2)) * (h > w ? (w / h): 1);
+        // 获取y值
+        var direction = Math.round((( Math.atan2(y,x)*(180/Math.PI ) +180)/90)+3) % 4;
+        if(direction === 0){
+            $('.b').css('transform','rotateX(0deg)');
+        }else if(direction === 1){
+            $('.b').css('transform','rotateY(0deg)');
+        }else if(direction === 2){
+            $('.b').css('transform','rotateX(0deg)');
+        }else if(direction === 3){
+            $('.b').css('transform','rotateY(0deg)');
+        }
+    })
+</script>
+</html>
